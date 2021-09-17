@@ -1,0 +1,39 @@
+---
+title: "Capture Science 2021: Order and Chaos"
+description: "Photo Gallery for the Capture Science Photography Competition 2021: Order and Chaos"
+---
+<!DOCTYPE html>
+<html lang="en-nz">
+<head>
+    <title>{{page.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{page.description}}">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <link href="assets/css/gallery.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+</head>
+<body>
+<div class="header">
+<h1 class="page-header">{{page.title}}</h1>
+    <div class="filter-buttons">
+    <button onclick="filterReset()" class="filter-button filter-active">Show All</button>
+    {% for f in site.data.filters %}
+        <button onclick="filter('{{f.filter}}')" class="filter-button">{{f.label}}</button>
+    {% endfor %}  
+    </div>
+</div>
+<div class="container">
+<div class="grid">
+    {% for image in site.data.images %}
+        {% include img_include.html %}
+    {% endfor %}
+</div>
+</div>
+<script src="assets/js/gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<div class="item" data-tags="{{image.tags}}">
+    <a data-fancybox="gallery" href="assets/images/gallery-full/{{image.image_src}}" data-caption="{{image.caption}}" data-artist="{{image.photographer}}" data-category="{{image.category}}" {% if image.prize %} data-prize="{{image.prize}}" {% endif %}>
+    <!--<div class="caption">
+        <p>{{image.caption}}</p>
+    </div>-->
+    <img src="assets/images/gallery-thumbnail/{{image.image_src}}" alt="{{image.title}}" />
+    </a>
+</div>
